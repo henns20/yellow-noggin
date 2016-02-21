@@ -1,0 +1,20 @@
+[
+	{
+		"title": "First Post",
+		"excerpt": "Lorem ipsum dolor sit amet.",
+		"content": "<p class=\"blog-content\">here is this <strong>thing</strong> right here</p>
+		<ul>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		</ul>"
+	}, {
+		"title": "Second Post",
+		"excerpt": "Lorem ipsum dolor sit amet.",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptatum laudantium soluta deserunt optio voluptatibus quod facilis ab excepturi libero. Dolore quidem quia reprehenderit explicabo, pariatur ad, repudiandae sit. Explicabo facere odio consectetur excepturi. Similique non, atque impedit? Dolor alias, numquam, quia inventore, dolorem nobis nemo ipsam asperiores recusandae fugit tempora ducimus, provident vitae quae! Iste accusantium hic voluptatem, maiores quo suscipit veniam placeat dolorem. Quidem ducimus, est velit beatae quae eveniet laboriosam atque vero consequatur sed! Libero."
+	}, {
+		"title": "Third Post",
+		"excerpt": "Lorem ipsum dolor sit amet.",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro repudiandae ut nostrum ab tenetur maiores illum ipsa vitae iste earum, commodi, voluptatibus quisquam saepe. Esse ab mollitia tempora expedita, assumenda aperiam nobis? Ipsa obcaecati autem, sit magnam magni consequuntur veritatis praesentium veniam nulla dolores repellat doloribus voluptatibus itaque aperiam. Suscipit accusantium, eligendi tempora error minus, nemo, obcaecati quam sapiente inventore eaque eius voluptatum nesciunt! Accusamus repellendus explicabo labore ipsa eligendi fuga."
+	}
+]

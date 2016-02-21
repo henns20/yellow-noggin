@@ -1,0 +1,18 @@
+# Testing #
+karma.conf.js
+
+# Limit Note Modules #
+node_modules/angular-mocks/
+node_modules/gulp/
+node_modules/gulp-*/
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
