@@ -1,0 +1,42 @@
+@media only screen and (min-width: 793px)
+.grid-block .source {
+  padding: 28px 32px 28px;
+}
+.grid-block .source {
+  font-family: "Roboto Mono", Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.42857;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 7;
+}
+/*right bottom*/
+.grid-block .tile-icon {
+  z-index: 8;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.grid-block .tile-icon.-light .svg-icon {
+  opacity: 1;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+.tile-chevron-right {
+  width: 24px;
+  height: 24px;
+}
+.svg-icon {
+  opacity: 0.54;
+  t
+
+
+t

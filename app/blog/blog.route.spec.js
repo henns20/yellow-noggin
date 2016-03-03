@@ -28,7 +28,7 @@ describe("description", function () {
     it("blog-main should work with state.go", function () {
       $state.go('blog');
       $rootScope.$apply();
-      expect($state.is('blog'));
+      expect($state.is('blog')).toBe(true);
     });
 
   });

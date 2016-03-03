@@ -4,11 +4,88 @@
     <meta charset="utf-8">
     <!--need a meta-tag to your for ui* ports  -->
     <title>Yellow Noggin</title>
-  </head>
-  <body>
-    <h1>Yellow Noggin</h1>
 
-     <div ui-view="main_content" class=""></div>
+      <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css"> -->
+      <!-- inject:css -->
+      <link rel="stylesheet" href="/app/assets/css/angular-material.min.css">
+      <link rel="stylesheet" href="/app/assets/css/header.css">
+      <link rel="stylesheet" href="/app/assets/css/main.css">
+      <link rel="stylesheet" href="/app/assets/css/topography.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/blog-detail.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/blog-teaser.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/layer2-bottom-main.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/layer2.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used/gd-teaser-all.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used/gd-teaser.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used-dev-stuff/blog-teaser-more.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used-dev-stuff/gd-teaser-all.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used-dev-stuff/gd-teaser.css">
+      <!-- endinject -->
+
+
+    </head>
+  <body ng-controller="CoreController as vm">
+    <header class="site-header" ng-style="vm.headerHeight" ng-cloak>
+      <!-- graphics animation section -->
+      <!-- <md-toolbar class="md-primary">
+        <p>
+          md pool bar test
+        </p>
+      </md-toolbar> -->
+      <md-toolbar class="wrapper-h js-navigation-row md-primary">
+        <div class="fake-shadow js-fake-shadow"></div>
+      </md-toolbar>
+
+      <!-- <div class="_color js-header-background">
+
+        <div class="page-title-container">
+          looks to be used in an old version leaving this blank for now
+        </div>
+        <div class="fake-shadow js-fake-shadow"></div>
+      </div>r
+
+      <div class="wave-layer js-wave-layer">
+        wave effect leaving this blank for now
+      </div> -->
+
+      <div class="navigation-text-container">
+        <div class="site-width">
+          <div layout="row" layout-align="start center" class="navigation-text-row-container">
+            <div class="title-div" flex="20" class="navigation-text-left">
+            <!-- TODO: Needs to be cleaned/diciphered -->
+            <a href="#" class="title" ng-show="!vm.isHomeState">Yellow Noggin</a>
+            </div>
+            <div class="navigation-text-middle-separator" flex="35"></div>
+            <div class="navigation-text-right" flex="40"> <!-- TODO navigation slightly left google design -->
+
+
+
+             <nav class="navigation js-nav-state">
+              <!-- <h2 class="off-screen"></h2> -->
+              <ul class="navigation-items" style="list-style-type: none;">
+                <li class="navigation-item"><a href="#/category/development">Development</a></li>
+                <li class="navigation-item"><a href="#/category/marketeering">Marketeering</a></li>
+                <li class="navigation-item"><a href="#">About</a></li>
+              </ul>
+            </nav>
+
+           </div>
+          </div>
+        </div>
+      </div> <!-- navigation text -->
+
+    </header>
+<!-- content section includes custom page title relative to the page using fake header div -->
+  <div class="wrapper js-page-wrapper">
+    <div id="top" class="main js-page-container">
+      <div class="page">
+       <div ui-view="main_content" class=""></div>
+     </div>
+   </div>
+  </div>
+  <footer style="position: relative;">
+  <div class="site-width">testing</div>
+  </footer>
 
     <!-- app js libraries -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -17,18 +94,27 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.5/angular-material.js"></script>
+
     <!-- end of js libraries -->
 
-    <!-- app js files -->
-    <script src="./app/app.module.js"></script>
-    <script src="./app/core/core.module.js"></script>
-    <script src="./app/core/core.route.js"></script>
-    <script src="./app/blog/blog.module.js"></script>
-    <script src="./app/blog/blog.service.js"></script>
-    <script src="./app/blog/blog.controller.js"></script>
-    <script src="./app/blog/blog.route.js"></script>
 
-    <!-- end of app js files -->
+    <!-- inject:js -->
+    <script src="/app/app.module.js"></script>
+    <script src="/app/blog/blog.module.js"></script>
+    <script src="/app/core/core.module.js"></script>
+    <script src="/app/blog/blog.controller-with-sp-promise.js"></script>
+    <script src="/app/blog/blog.controller.js"></script>
+    <script src="/app/blog/blog.route-nested-state.js"></script>
+    <script src="/app/blog/blog.route.js"></script>
+    <script src="/app/blog/blog.service.js"></script>
+    <script src="/app/core/core.controller-scopewatch.js"></script>
+    <script src="/app/core/core.controller.js"></script>
+    <script src="/app/core/core.controller.spec-withscopewatch.js"></script>
+    <script src="/app/core/core.mdTheming.js"></script>
+    <script src="/app/core/core.route.js"></script>
+    <script src="/app/core/core.service.js"></script>
+    <!-- endinject -->
 
 
   </body>

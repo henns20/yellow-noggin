@@ -21,7 +21,6 @@
           return response.data;
         })
         .catch(function (error) {
-          console.log(error);
           var message = 'query for blogs. ' +
           error.data.description;
           return $q.reject(message);

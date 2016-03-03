@@ -2,23 +2,31 @@
 describe('BlogController', function() {
     var controller,
     vm = {},
-    $q;
+    view = 'app/blog/blog-main/blog-main.html',
+    $q,
+    $state,
+    $templateCache;
 
-    var blogData = [
-    	{
-    		"title": "First Post",
-    		"excerpt": "Lorem ipsum dolor sit amet.",
-    		"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nisi odio neque aliquam magni explicabo sint iste incidunt minus itaque ducimus voluptas similique eos natus nobis alias quam accusamus, aspernatur doloremque amet, nesciunt esse velit. Repudiandae sunt dolorem esse eum, qui aliquid pariatur velit enim autem temporibus minima cumque ipsa in, accusantium sed deleniti natus sequi illo nihil ipsum quam est sit dignissimos itaque quo? Aperiam qui et harum porro eligendi dolore tempora accusamus culpa voluptate animi aliquid alias necessitatibus quod ipsam hic, dolorem expedita suscipit, nobis quas quia. A eum ullam alias saepe accusantium deleniti doloremque tempora assumenda error ipsam incidunt quam optio itaque atque minima eos dicta quidem officiis, obcaecati architecto voluptas, debitis illo consequatur?"
-    	}, {
-    		"title": "Second Post",
-    		"excerpt": "Lorem ipsum dolor sit amet.",
-    		"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptatum laudantium soluta deserunt optio voluptatibus quod facilis ab excepturi libero. Dolore quidem quia reprehenderit explicabo, pariatur ad, repudiandae sit. Explicabo facere odio consectetur excepturi. Similique non, atque impedit? Dolor alias, numquam, quia inventore, dolorem nobis nemo ipsam asperiores recusandae fugit tempora ducimus, provident vitae quae! Iste accusantium hic voluptatem, maiores quo suscipit veniam placeat dolorem. Quidem ducimus, est velit beatae quae eveniet laboriosam atque vero consequatur sed! Libero."
-    	}, {
-    		"title": "Third Post",
-    		"excerpt": "Lorem ipsum dolor sit amet.",
-    		"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro repudiandae ut nostrum ab tenetur maiores illum ipsa vitae iste earum, commodi, voluptatibus quisquam saepe. Esse ab mollitia tempora expedita, assumenda aperiam nobis? Ipsa obcaecati autem, sit magnam magni consequuntur veritatis praesentium veniam nulla dolores repellat doloribus voluptatibus itaque aperiam. Suscipit accusantium, eligendi tempora error minus, nemo, obcaecati quam sapiente inventore eaque eius voluptatum nesciunt! Accusamus repellendus explicabo labore ipsa eligendi fuga."
-    	}
-    ];
+var blogData = [
+  {
+    "title": "Test Title 1",
+    "category": "development",
+    "excerpt": "LoremLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem quaerat praesentium iusto distinctio impedit soluta error, perferendis blanditiis molestias laboriosam maxime optio quis autem nisi dolores atque et illum sint.",
+    "content": "<div class=\"test-class\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><div class=\"test-class2\">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto & dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><ul><li>list 1</li><li>list name 2</li><li>list name 3</li></ul>"
+  },
+  {
+    "title": "Test Title 0",
+    "category": "marketeering",
+    "excerpt": "Test excerptLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem quaerat praesentium iusto distinctio impedit soluta error, perferendis blanditiis molestias laboriosam maxime optio quis autem nisi dolores atque et illum sint.",
+    "content": "<div class=\"test-class\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><div class=\"test-class2\">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto & dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><ul><li>list 1</li><li>list name 2</li><li>list name 3</li></ul>"
+  },
+  {
+    "title": "Test Title 0",
+    "category": "development",
+    "excerpt": "Test excerptLorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem quaerat praesentium iusto distinctio impedit soluta error, perferendis blanditiis molestias laboriosam maxime optio quis autem nisi dolores atque et illum sint.",
+    "content": "<div class=\"test-class\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><div class=\"test-class2\">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto & dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><ul><li>list 1</li><li>list name 2</li><li>list name 3</li></ul>"
+  }
+];
 
 
     // var people = mockData.getMockPeople();
@@ -27,12 +35,19 @@ describe('BlogController', function() {
           module('yn.blog');
     });
 
-    beforeEach(inject(function (_$controller_, _$q_, _$rootScope_) {
+    beforeEach(inject(function (_$controller_, _$q_, _$rootScope_, _$state_, _$templateCache_) {
       controller = _$controller_;
       $q = _$q_;
       $rootScope = _$rootScope_;
+      $state = _$state_;
+      $templateCache = _$templateCache_;
     }));
 
+    beforeEach(function () {
+        $templateCache.put(view, '');
+    });
+
+    // Test help data
     /**
      *     mock of blog factory service
      *     we don't need to know here is making the call properly(http call)
@@ -45,14 +60,24 @@ describe('BlogController', function() {
         return $q.when(blogData);
       }
     };
+    var onlyDevelopmentPosts = function (arr) {
+      return arr.some(function (el) {
+        return el.category === 'development';
+      });
+    };
+    var onlyMarketeeringPosts = function (arr) {
+      return arr.some(function (el) {
+        return el.category === 'marketeering';
+      });
+    };
 
     // bard.verifyNoOutstandingHttpRequests();
 
     describe('Blog controller', function() {
-        it('should be created successfully', function () {
-              vm = controller('BlogController', {BlogFactory: bf});
-              expect(vm).toBeDefined();
-        });
+        // it('should be created successfully', function () {
+        //       vm = controller('BlogController', {BlogFactory: bf});
+        //       expect(vm).toBeDefined();
+        // });
 
         describe('after activate', function() {
 
@@ -61,18 +86,54 @@ describe('BlogController', function() {
               expect(vm.title).toBe('Jamie\'s Blog');
             });
 
-
-            it('should call getBlogData(BlogFactory.getBlogs service) & store its response'  +
-                'in vm.blogData property for main blog page ngrepeat', function () {
+            it('should call getBlogData(getBlogs service) & store response in vm.blogData for main page ngrepeat', function () {
               vm = controller('BlogController', {BlogFactory: bf});
               $rootScope.$apply();
               expect(vm.blogData.length).toEqual(blogData.length);
             });
-            describe("blog posts", function () {
 
-              it("should work with stateparams service", function () {
+            it("should not call getCurrentPost if postId is an undefined(on main blog page)", function () {
+              var stateParams  = { postId: undefined };
+              vm = controller('BlogController', {BlogFactory: bf, $stateParams: stateParams});
+              vm.callTest = 1;
+
+              spyOn(vm, 'getCurrentPost').and.callFake(function () {
+                // dump('fake function called');
+                vm.callTest = 3;
+              });
+
+              spyOn(vm, 'getMainBlogData').and.callFake(function () {
+                // dump('fake getBlogData function called');
+                vm.callTest = 5;
+              });
+
+              vm.initialize(vm.postId);
+              $rootScope.$apply;
+              expect(vm.callTest).toEqual(5);
+
+            });
+
+            describe('category posts', function () {
+
+              it('should get only development category posts', function () {
+                var stateParams  = { categoryId: 'development' };
+                vm = controller('BlogController', {BlogFactory: bf, $stateParams: stateParams});
+                $rootScope.$apply();
+                expect(onlyDevelopmentPosts(vm.developmentPosts)).toEqual(true);
+              });
+
+              it('should get only marketeering category posts', function () {
+                var stateParams  = { categoryId: 'marketeering' };
+                vm = controller('BlogController', {BlogFactory: bf, $stateParams: stateParams});
+                $rootScope.$apply();
+                expect(onlyMarketeeringPosts(vm.marketeeringPosts)).toEqual(true);
+              });
+
+            });
+            describe('blog posts', function () {
+
+              it('should call vm.getCurrentPost and store post id blog data when stateparams provided, ', function () {
                 var stateParams  = { postId: 1 };
-
                 vm = controller('BlogController', {BlogFactory: bf, $stateParams: stateParams});
                 $rootScope.$apply();
                 expect(vm.currentPost.title).toEqual(blogData[1].title);

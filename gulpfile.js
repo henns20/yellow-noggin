@@ -1,13 +1,15 @@
 var gulp = require('gulp');
 var args = require('yargs').argv;
 var config = require('./gulp.config')(); // .js is optional
+var moment = require('moment');
 var $ = require('gulp-load-plugins')({lazy: true});
 var fs = require('fs');
 
 
 
-////////// Traditional gulp tasks
-
+/********** Traditional gulp tasks **********/
+//John Papa reference: TODO: pluralsight href here
+// https://app.pluralsight.com/library/courses/javascript-build-automation-gulpjs/table-of-contents
 
 /**
  * gulp - vet
@@ -26,48 +28,49 @@ gulp.task('vet', function() {
 });
 
 
+	/**
+	 *  gulp html-inject - injects front end app/vendor files to index.html
+	 *  in proper dependency order and in isolated sections by file ext.
+	 *
+	 * @return {file object}
+	 */
+	gulp.task('html-inject', function () {
+			log('Injecting js, css files into index.html');
 
-///////////////// My Static Blog Utility:  formation/utility tasks section
-/////// Todo: make the file architecture cleaner
-// 1 tempaltes dir - rename blogutility
-// 2 test-insert-prejson - rename blog parts
-// 3 ...
+			return gulp
+				.src(config.index)
+				.pipe($.inject(gulp.src(config.js)))
+				.pipe($.inject(gulp.src(config.css)))
+				.pipe(gulp.dest('./'));
+	});
 
-/**
- * task: form-blog
- * Properly Adds Staged blog to the current blogs(json)
- * More detail: takes raw my html blog post & title, excerpt file
- * makes and puts it into the json object(json conventions object)
- * ultimately adding up to previous blogs jason file(prepending into it)
- * Dependent of 2 sub tasks below
- * Steps 1) Write html for the content area and save as blog html in src blog-utility/blog.html
- * Step 2) Add other parts* as blog-utility/blog-parts.html (or other ext - is a json like convention) ** see todos
- * Step 3) terminal: gulp form-blog
- *
- */
 
-gulp.task('form-blog', ['prepend-all-blogs'], function () {
-	log('Forming blogs: created in dist/blog-utility/final');
-    return gulp
-      .src('./dist/templates/staged/blogs-unwrapped.html')
-			.pipe($.insert.wrap('[', ']'))
-			.pipe($.replace('},]', '}]'))
-      .pipe(gulp.dest('./dist/templates/final/'));
+/********** End: Traditional gulp tasks **********/
+
+
+//////////New Blog Utility
+//  with unique files(uses gulp rename 2 name file by
+// date(uses moment module/package) & separates blog posts into individual files)
+
+gulp.task('build-blog', ['build-post'], function () {
+		return gulp
+				.src('./src/templates/blog-posts/*.json')
+				.pipe($.concat('all-blogs.json'))
+				.pipe($.insert.wrap('[', ']'))
+				.pipe($.replace('},]', '}]'))
+				.pipe(gulp.dest('./dist/blog/'));
 });
 
 
-//////////task: form-blogs dependencies/////////
+gulp.task('build-post', function () {
+    var fileContent = fs.readFileSync('./src/templates/blog-metadata.txt', 'utf8');
+		var date = moment('02-26-2016');
+		var today = date.format('YYYY-MM-DD');
+		log(date.format('YYYY-MM-DD')); //expressed according to ISO 8601(International Organization For Standardization)
 
-/**
- * task: blog-to-object (aka: blog parts to object)
- * (1) Cleans Html; (2) Prepends manually prepared title, excerpt(etc)file
- * (3) Wraps data in an object with json convention (to be added to a json file)
- */
-
-gulp.task('blog-to-object', function () {
-    var fileContent = fs.readFileSync('./src/templates/test-insert-prejson.txt', 'utf8');
 		return gulp
 				.src('./src/templates/blog.html')
+				.pipe($.rename(today + '.json'))
         .pipe($.cleanhtml())
         .pipe($.replace('"', '\\"'))
 	      .pipe($.insert.prepend('"content": "'))
@@ -75,25 +78,9 @@ gulp.task('blog-to-object', function () {
 	      .pipe($.insert.append('\n')) //at a line break for next prepend task
 	      .pipe($.insert.prepend(fileContent))
 	      .pipe($.insert.wrap('{\n', '},'))
-	      .pipe(gulp.dest('./dist/templates/'));
+	      .pipe(gulp.dest('./src/templates/blog-posts'));
 });
 
-/**
- * task: prepend-all-blogs to staging
- * Add Recent blog object(created from blog-to-object task) to all previous
- * blogs(file with blog objects)
- */
-
-gulp.task('prepend-all-blogs', ['blog-to-object'], function () {
-		var fileBeforeFinal = fs.readFileSync('./dist/templates/blog.html', 'utf8');
-    return gulp
-      .src('./dist/templates/staged/blogs-unwrapped.html')
-			.pipe($.insert.prepend(fileBeforeFinal))
-      .pipe(gulp.dest('./dist/templates/staged/'));
-});
-
-//////////form-blog dependencies End
-///////////////// End: My Static Blog Utility
 
 ////////////// A John Papa convention to separate out logs
 

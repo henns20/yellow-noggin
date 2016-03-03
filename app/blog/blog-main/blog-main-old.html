@@ -1,0 +1,43 @@
+<div class="wrapper js-page-wrapper">
+  <div ng-controller="BlogController as vm">
+    <div id="top" class="main  js-page-container">
+      <div class="page">
+
+        <div class="fake-header js-in-page-fake-header">
+          <div class="page-title-container">
+            <div class="site-width">
+              <h1 class="page-title js-sticky-header-fade">
+                <span class="original">Yellow Noggin</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-animate-out">
+          <div id="main" class="main-wrapper">
+
+            <div class="fake-shadow js-in-page-fake-shadow"></div>
+            <!-- <h2 class="off-screen">List Of Featured Content</h2> -->
+            <div class="site-width">
+              <div layout="row" layout-wrap>
+              <div class="" flex="50" ng-repeat="blog in vm.blogData">
+                <h2 class="blog-title">
+                  <a ng-href="#/post/{{$index}}">{{blog.title}}</a>
+                 </h2>
+                <div class="blog-id">{{blog.id}}</div>
+                <div class="blog-excerpt">{{blog.excerpt}}</div>
+                <div class="read-more">
+                    <a ng-href="#/post/{{$index}}">read more</a>
+                </div>
+              </div>
+
+            </div>
+            </div>
+          </div>
+          <footer class="site-footer"></footer>
+        </div”>
+
+      </div>
+      </div>
+    </div>
+  </div>

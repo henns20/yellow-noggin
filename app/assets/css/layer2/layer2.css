@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.main {
+  width: 100%;
+}
+
+.page {
+  position: relative;
+}
+
+/* page-top */
+
+.page .fake-header {
+  position: relative;
+  z-index: 1001;
+  height: 256px;
+  /*background-color: #1e88e5; 600*/
+  /*background-color: rgb(66, 133, 244); google design*/
+  background-color: #2196F3;
+}
+
+.page-title-container {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+}
+
+.page-title-container .page-title {
+    /*color: #fff;*/
+    color: #FFFF8d;
+    font-size: 56px;
+    line-height: 1;
+    padding: 0 32px;
+    will-change: transform;
+}
+
+/* TODO: h2 stuff here and hidden chars */
+
+/* page-bottom */
+/* layer2-bottom css file */

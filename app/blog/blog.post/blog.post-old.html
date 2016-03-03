@@ -1,0 +1,26 @@
+
+        <div ng-controller="BlogController as vm">
+
+          <div class="fake-header js-in-page-fake-header">
+            <div class="page-title-container">
+              <div class="site-width">
+                <h1 class="page-title js-sticky-header-fade">
+                  <span class="original">{{vm.currentPost.title}}</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-wrapper" style="position: relative; height: 100%;">
+            <div class="site-width" >
+            <div layout="row" layout-align="center start" layout-fill>
+              <div class="blog-post-detail">
+              <!-- <h1 class="post-title">{{vm.currentPost.title}}</h1> -->
+              <div ng-bind-html="vm.myhtml">
+
+              </div>
+              </div>
+          </div>
+          </div>
+        </div>
+        </div> <!-- ng-controller -->

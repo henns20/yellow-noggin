@@ -1,13 +1,19 @@
 [{
 "title": "Test Title 1",
-"except": "Test excerpt",
+"category": "development",
+"image": "https://placehold.it/1500x750",
+"description": "LoremLorem ipsum dolor sit amet, consectetur adipisicing elit.",
 "content": "<div class=\"test-class\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><div class=\"test-class2\">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto & dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><ul><li>list 1</li><li>list name 2</li><li>list name 3</li></ul>"
 },{
 "title": "Test Title 0",
-"except": "Test excerpt",
+"category": "marketeering",
+"image": "https://placehold.it/1500x750",
+"description": "LoremLorem ipsum dolor sit amet, consectetur adipisicing elit.",
 "content": "<div class=\"test-class\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><div class=\"test-class2\">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto & dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><ul><li>list 1</li><li>list name 2</li><li>list name 3</li></ul>"
 },{
 "title": "Test Title 0",
-"except": "Test excerpt",
+"category": "development",
+"image": "https://placehold.it/1500x750",
+"description": "LoremLorem ipsum dolor sit amet, consectetur adipisicing elit.",
 "content": "<div class=\"test-class\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><div class=\"test-class2\">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. Minus in illo accusamus, ut, id earum cupiditate fugiat laudantium, architecto labore iusto & dolore. Veritatis beatae, excepturi doloribus aliquid odit, obcaecati nulla!</div><ul><li>list 1</li><li>list name 2</li><li>list name 3</li></ul>"
 }]

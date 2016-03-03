@@ -7,6 +7,7 @@
       'ngAria',
       'ui.router',
       'ngMessages',
-      'ngSanitize'
+      'ngSanitize',
+      'ngMaterial'
     ]);
 })();

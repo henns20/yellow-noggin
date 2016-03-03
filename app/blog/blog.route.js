@@ -23,6 +23,14 @@
               templateUrl: 'app/blog/blog.post/blog.post.html'
             }
           }
+        })
+        .state('category', {
+          url: '/category/:categoryId',
+          views: {
+            main_content: {
+              templateUrl: 'app/blog/development-category/development-category.html'
+            }
+          }
         });
     }
 })();
