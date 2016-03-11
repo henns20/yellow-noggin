@@ -5,6 +5,7 @@ karma.conf.js
 node_modules/angular-mocks/
 node_modules/gulp/
 node_modules/gulp-*/
+node_modules/.bin/
 
 
 # OS generated files #
@@ -14,5 +15,5 @@ node_modules/gulp-*/
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
+thumbs.db
 Thumbs.db
