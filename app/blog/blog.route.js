@@ -12,12 +12,12 @@
           url: '/',
           views: {
             main_content: {
-              templateUrl: 'app/blog/blog-main/blog-main.html'
+              templateUrl: 'app/blog/blog-main/blog-main-cards.html'
             }
           }
         })
         .state('blog-post', {
-          url: '/post/:postId',
+          url: '/:categoryId/post/:postId',
           views: {
             main_content: {
               templateUrl: 'app/blog/blog.post/blog.post.html'
@@ -28,7 +28,7 @@
           url: '/category/:categoryId',
           views: {
             main_content: {
-              templateUrl: 'app/blog/development-category/development-category.html'
+              templateUrl: 'app/blog/category/category-cards.html'
             }
           }
         });

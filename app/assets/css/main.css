@@ -22,9 +22,9 @@ body {
     display: block;
     /*border: solid 1px #333 development alignment border*/
 }
-.main ._fake-shadow, .site-header ._wrapper ._fake-shadow, .site-header ._color ._fake-shadow {
-    /*background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAYCAQAAAB68uRSAAAAKElE…hcGdgYGH4CyL+wVkI4g8W4jcuiT9YDPgHJ/7DiP9AAgBhORhg+gPD+AAAAABJRU5ErkJggg==');*/
+.main .fake-shadow, .site-header .wrapper .fake-shadow, .site-header .color .fake-shadow {
+    background-image:url('../shadow6.png');
     background-repeat: repeat-x;
-    background-size: 1px 12px;
+    background-size: 3px 12px;
     height: 12px;
 }

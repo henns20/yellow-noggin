@@ -3,6 +3,7 @@ grid-block: need a different name that matches framework*/
 
 .page .fake-header.detail {
   height: 64px;
+  /*background-color: #2196F3;*/
 }
 
 .page .fake-header.detail {
@@ -10,12 +11,19 @@ grid-block: need a different name that matches framework*/
   z-index: 1001;
 }
 
+.grid-block.article.header {
+  /*background-color: #2196F3;*/
+  /*background-color: #BDBDBD; */
+  /*background-color: #E0E0E0;*/
+  /*background-color: #9E9E9E; 500*/
+}
+
 .header-container {
   border-bottom: 1px solid #e0e0e0;
 }
 
 .header-container {
-  max-height: 220px;
+  max-height: 150px;
   overflow: hidden;
 }
 
@@ -26,7 +34,8 @@ grid-block: need a different name that matches framework*/
 /*the end of minimum  styles*/
 
 .grid-block.article.header {
-  background: #fff;
+   /*  TODO: this may need to be reactivated - this is a background in google design */
+  /*background: #fff;*/
 }
 .grid-block.header {
   height: 0;don
@@ -98,6 +107,14 @@ grid-block: need a different name that matches framework*/
     padding-bottom: 80px;
 }
 
+.blog-detail-image img {
+   max-height: 250px;
+   display: block;
+   margin: 0 auto;
+}
+.blog-detail-image {
+  margin-bottom: 25px;
+}
 
 /*blog post top minimum with*/
 @media only screen and (min-width: 793px) {
@@ -106,7 +123,9 @@ grid-block: need a different name that matches framework*/
     padding-right: 32px;
   }
 
-  .grid-block.article.header .text {
+
+  /*original padding larger header container*/
+  /*.grid-block.article.header .text {
     padding: 28px 32px 30px;
   }
 
@@ -114,6 +133,15 @@ grid-block: need a different name that matches framework*/
       font-size: 45px;
       line-height: 1.06667;
       margin: 32px 0 24px;
+  }*/
+  .grid-block.article.header .text {
+    padding: 2px 32px 3px;
+  }
+
+  .grid-block.header .title {
+      font-size: 45px;
+      line-height: 1.06667;
+      margin: 32px 0 5px;
   }
 
   .grid-block .title {

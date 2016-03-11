@@ -1,0 +1,63 @@
+
+  <div ng-controller="BlogController as vm">
+
+        <div class="fake-header js-in-page-fake-header">
+          <div class="page-title-container">
+            <div class="site-width">
+              <h1 class="page-title js-sticky-header-fade">
+                <!-- http-www-freeformatter-com-html-entities-html-->
+                <!-- <span class="original">&#123; Yellow Noggin	&#125;</span> -->
+                <span class="original return">Yellow Noggin</span>
+                <!-- <span class="original">&#35; Yellow Noggin</span> -->
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-animate-out">
+          <div id="main" class="main-wrapper">
+
+            <div class="fake-shadow js-in-page-fake-shadow"></div>
+            <!-- <h2 class="off-screen">List Of Featured Content</h2> -->
+
+            <div class="site-width">
+
+                <div layout="row" layout-wrap>
+                  <!-- TODO: make this into component directive(directive including or disclosing the main log list area) -->
+                <div class="blog-teaser-block article" flex="50" ng-repeat="blog in vm.blogData">
+                    <a ng-href="#/{{blog.category}}/post/{{$index}}" class="blog-block">
+                      <div id="blog-teaser-container">
+                        <!-- TODO: do something with that color style placeholder -->
+                        <div class="text colorstyle light">
+                          <div class="blog-teaser-heading">
+                            <h3 class="blog-title">
+                              <span>{{blog.title}}</span>
+                            </h3>
+                            <div class="blog-description">{{blog.description}}</div>
+                          </div>
+                        </div>
+                        <!-- <div class="blog-id">{{blog.id}}</div> -->
+                        <div class="blog-teaser-image">
+                          <img ng-src="{{blog.image}}" alt="">
+                        </div>
+                        <div class="blog-teaser-body">
+
+                          <div class="read-more">
+                              <a ng-href="#/post/{{$index}}">read more</a>
+                          </div>
+                        </div>
+
+                      </div>
+                    </a>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div> <!--main-wrapper -->
+
+
+        </div> <!--animate-out-->
+      </div> <!-- pager -->
+</div>

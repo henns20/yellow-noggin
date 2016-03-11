@@ -14,11 +14,14 @@ module.exports = function() {
         './app/**/*.module.js',
         './app/**/*.js',
         './app/**/*.js',
-        '!./app/**/*.spec.js'
+        '!./app/**/*.spec.js',
+        '!./app/**/*.spec-*.js'
       ],
       css: [
         './app/assets/css/*.css',
-        './app/assets/css/**/*.css'
+        './app/assets/css/**/*.css',
+        '!./app/assets/css/**/not-being-used/*.css'
+
       ]
 
   };

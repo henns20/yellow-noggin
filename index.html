@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html ng-app="yn">
   <head>
     <meta charset="utf-8">
@@ -6,33 +6,35 @@
     <title>Yellow Noggin</title>
 
       <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css"> -->
+			<!-- node font awesome did not work for now using cdn -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
       <!-- inject:css -->
       <link rel="stylesheet" href="/app/assets/css/angular-material.min.css">
+      <link rel="stylesheet" href="/app/assets/css/footer.css">
       <link rel="stylesheet" href="/app/assets/css/header.css">
       <link rel="stylesheet" href="/app/assets/css/main.css">
       <link rel="stylesheet" href="/app/assets/css/topography.css">
+      <link rel="stylesheet" href="/app/assets/css/layer2/blog-cards.css">
       <link rel="stylesheet" href="/app/assets/css/layer2/blog-detail.css">
       <link rel="stylesheet" href="/app/assets/css/layer2/blog-teaser.css">
       <link rel="stylesheet" href="/app/assets/css/layer2/layer2-bottom-main.css">
       <link rel="stylesheet" href="/app/assets/css/layer2/layer2.css">
-      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used/gd-teaser-all.css">
-      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used/gd-teaser.css">
-      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used-dev-stuff/blog-teaser-more.css">
-      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used-dev-stuff/gd-teaser-all.css">
-      <link rel="stylesheet" href="/app/assets/css/layer2/not-being-used-dev-stuff/gd-teaser.css">
       <!-- endinject -->
 
 
     </head>
   <body ng-controller="CoreController as vm">
+
     <header class="site-header" ng-style="vm.headerHeight" ng-cloak>
       <!-- graphics animation section -->
-      <!-- <md-toolbar class="md-primary">
+      <!-- <md-toolbar class="md-primary">h
         <p>
           md pool bar test
         </p>
       </md-toolbar> -->
-      <md-toolbar class="wrapper-h js-navigation-row md-primary">
+
+      <md-toolbar class="wrapper-h js-navigation-row md-primary" ng-style="vm.backgroundColor">
         <div class="fake-shadow js-fake-shadow"></div>
       </md-toolbar>
 
@@ -53,19 +55,19 @@
           <div layout="row" layout-align="start center" class="navigation-text-row-container">
             <div class="title-div" flex="20" class="navigation-text-left">
             <!-- TODO: Needs to be cleaned/diciphered -->
-            <a href="#" class="title" ng-show="!vm.isHomeState">Yellow Noggin</a>
+            <a href="#" class="title return" ng-show="!vm.isHomeState" ng-style="vm.headerTextColor">Yellow Noggin	</a>
             </div>
             <div class="navigation-text-middle-separator" flex="35"></div>
-            <div class="navigation-text-right" flex="40"> <!-- TODO navigation slightly left google design -->
+            <div class="navigation-text-right" flex="40" > <!-- TODO navigation slightly left google design -->
 
 
 
              <nav class="navigation js-nav-state">
               <!-- <h2 class="off-screen"></h2> -->
               <ul class="navigation-items" style="list-style-type: none;">
-                <li class="navigation-item"><a href="#/category/development">Development</a></li>
-                <li class="navigation-item"><a href="#/category/marketeering">Marketeering</a></li>
-                <li class="navigation-item"><a href="#">About</a></li>
+                <li class="navigation-item"><a href="#/category/full-stack" ng-style="vm.headerTextColor">Full Stack</a></li>
+                <li class="navigation-item"><a href="#/category/marketeering" ng-style="vm.headerTextColor">Marketeering</a></li>
+                <li class="navigation-item"><a href="#" ng-style="vm.headerTextColor">About</a></li>
               </ul>
             </nav>
 
@@ -76,6 +78,7 @@
 
     </header>
 <!-- content section includes custom page title relative to the page using fake header div -->
+
   <div class="wrapper js-page-wrapper">
     <div id="top" class="main js-page-container">
       <div class="page">
@@ -83,8 +86,23 @@
      </div>
    </div>
   </div>
-  <footer style="position: relative;">
-  <div class="site-width">testing</div>
+  <footer>
+	  <div class="site-width">
+				<div class="footer-inside" layout="row" layout-align="center center">
+					<div flex="25">
+						<div class="footer-inside-left">
+							<h2 class="site-title-footer">Yellow Noggin</h2>
+						</div>
+					</div>
+					<div flex="50"></div>
+					<div flex="25">
+						<div class="footer-inside-right">
+							<p class="site-about-footer">About YN</p>
+						</div>
+
+					</div>
+				</div>
+	  </div>
   </footer>
 
     <!-- app js libraries -->
@@ -110,7 +128,6 @@
     <script src="/app/blog/blog.service.js"></script>
     <script src="/app/core/core.controller-scopewatch.js"></script>
     <script src="/app/core/core.controller.js"></script>
-    <script src="/app/core/core.controller.spec-withscopewatch.js"></script>
     <script src="/app/core/core.mdTheming.js"></script>
     <script src="/app/core/core.route.js"></script>
     <script src="/app/core/core.service.js"></script>

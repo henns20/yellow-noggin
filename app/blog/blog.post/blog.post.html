@@ -13,17 +13,17 @@
         <div class="fake-shadow js-in-page-fake-shadow"></div>
         <!-- <h2 class="off-screen">List Of Featured Content</h2> -->
 
-        <div class="header-container">
+        <div class="header-container" ng-style="vm.backgroundColor">
             <!-- <span id="type-grid-article-introducing-resizer" class="off-screen">Article</span>
              -->
          <div class="grid-block article header">
             <!-- large image stuff here including lazy placeholder -->
             <div class="site-width">
-              <div class="text">
+              <div class="text" ng-style="vm.headerTextColor">
                 <div class="heading">
                   <h1 class="title">
-                    {{vm.currentPost.title}}
-                    <!-- <span class="hidden-chars"></span> -->
+
+                    <span class="return">{{vm.currentPost.title}}</span>
                   </h1>
                   <p id="description-grid-article-introducing-resizer" class="description">this is the sub headline of the article</p>
                 </div>
@@ -40,9 +40,14 @@
         <div class="site-width">
 
           <div layout="row" layout-align="center start">
-            <div layout="column">
+            <div layout="column" layout-align="center center">
               <!-- fab div here TODO -->
+
               <div class="blog-post-detail">
+                <div class="blog-detail-image">
+                  <img ng-src="{{vm.currentPost.image}}" alt="">
+                </div>
+
               <!-- <h1 class="post-title">{{vm.currentPost.title}}</h1> -->
               <div ng-bind-html="vm.myhtml">
 

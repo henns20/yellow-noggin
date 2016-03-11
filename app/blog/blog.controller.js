@@ -1,15 +1,15 @@
-(function () {
+ (function () {
   'use strict';
 
   angular
     .module('yn.blog')
-    .controller('BlogController', ['BlogFactory', '$stateParams', '$q', '$rootScope', BlogController]);
+    .controller('BlogController', ['BlogFactory', '$stateParams', '$q', '$rootScope', '$scope', BlogController]);
 
-      function BlogController(BlogFactory, $stateParams, $q, $rootScope) {
+      function BlogController(BlogFactory, $stateParams, $q, $rootScope, $scope) {
         var vm = this;
+        vm.title = 'Jamie\'s Blog'; // value tests binding working
         vm.postId = $stateParams.postId;
         vm.categoryId = $stateParams.categoryId;
-        vm.title = 'Jamie\'s Blog'; // value tests binding working
         vm.blogData  = [];
         vm.developmentPosts = [];
         vm.marketeeringPosts = [];
@@ -19,6 +19,7 @@
         vm.initialize = initialize;
         vm.getCategoryPosts = getCategoryPosts;
         // TODO: need to reverse order of blogs since they are in earliest date order because of gulp set up and really concatenates natural way of operating in the file system way of ordering files
+
 
         vm.initialize(vm.postId, vm.categoryId);
 
@@ -34,18 +35,55 @@
           .then(function (data) {
             vm.blogData = data;
           });
-        } else if (pId && !catId) {
+        } else if (pId && catId) {
             vm.getCurrentPost(pId)
               .then(function (data) {
                 vm.currentPost = data;
                 vm.myhtml = vm.currentPost.content;
+                watchChangeColor();
               });
         } else {
             vm.getCategoryPosts(catId)
               .then(function (data) {
                 vm.blogData  = data;
               });
+
+              // TODO: make sense out of this
+              // this work for faked heterologous sections not on individual posts
+              // setCategoryColors(catId);
+
+              //added this later see above
+              // not sure also why needed the watchChangeColorin the else if above
+              watchChangeColor();
+
         }
+      }
+
+
+      function watchChangeColor() {
+        console.log('watch color is being called');
+        $scope.$watch('vm.categoryId', function (x, y) {
+          console.log(x, 'this is x');
+          console.log(y, 'this is y');
+          setCategoryColors(x);
+        });
+      }
+
+      //TODO: js docs, set as a service(core service uses this as well)
+      // (2) test unit test
+      function setCategoryColors(catId) {
+          switch (catId) {
+            case ('full-stack'):
+              vm.backgroundColor = {'background-color': '#455A64'};
+              vm.headerTextColor = {'color': '#fff'};
+              break;
+            case ('marketeering'):
+              vm.backgroundColor = {'background-color': '#FBC02D'};
+              vm.headerTextColor = {'color': '#282828'};
+              break;
+            default:
+              vm.backgroundColor = {'background-color': '#2196F3'};
+          }
       }
 
 
@@ -68,9 +106,9 @@
           var filterResponse;
           return BlogFactory.getBlogs()
             .then(function (response) {
-              if (catId === 'development') {
+              if (catId === 'full-stack') {
               filterResponse =  response.filter(function (element) {
-                if (element.category === 'development') {
+                if (element.category === 'full-stack') {
                     return element;
                 }
               });

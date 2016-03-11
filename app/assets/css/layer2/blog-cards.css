@@ -1,15 +1,6 @@
-/*current css for teaser*/
+/*current css for cards in the blog list pages*/
 
 
-/*.
-
-.blog-teaser-body {
-    padding: 0px 82px 15px 32px;
-}
-
-.blog-excerpt {
-  margin-bottom: 20px;
-}*/
 
 .blog-teaser-block a {
   text-decoration: none;
@@ -22,6 +13,19 @@
   color: #333;
   /*color: #282828;*/
 }
+
+/*blog cards*/
+
+#blog-cards-container {
+  background-color: #fff;
+  width: 97%
+}
+
+.card-outline {
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+
+
 /*heading*/
 
 .blog-block .blog-title {
@@ -38,32 +42,38 @@ margin-top: 10px;
 width: 85%;
 }
 
-.blog-teaser-image img {
+.blog-cards-image img {
   /*image overhang fix 99.7*/
   width: 99.7%;
   max-height: 275px;
   border: solid 1px #333;
 }
 
-#blog-teaser-container {
-  /*background-color: #01579B;*/
-  /*background-color: #1E88E5;*/
-  /*background-color: #1976D2;*/
-  /*background-color: #E3F2FD;*/
-  background-color: #fffr;
-}
-
 
 @media only screen and (min-width: 793px){
 
 /*.grid-block.article.-aspect-1x1 ._text ._heading used to be*/
-  #blog-teaser-container .text .blog-teaser-heading {
+  #blog-cards-container {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  #blog-cards-container .text .blog-cards-heading {
     padding: 28px 32px 30px;
   }
 
   .blog-block .blog-title {
     font-size: 24px;
     line-height: 1.33333;
+  }
+
+  .blog-cards-bottom-category {
+    padding: 10px 32px 10px;
+  }
+
+  .chevron-right {
+    text-align: right;
+    padding: 10px 32px 10px;
   }
 
 }

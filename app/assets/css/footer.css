@@ -1,0 +1,27 @@
+footer {
+  background-color: #fff;
+}
+
+.footer-inside {
+  height: 144px;
+  min-height: 144px;
+  position: relative;
+}
+
+.footer-inside-left {
+  text-align: left;
+  padding: 0px 32px 0px;
+}
+
+.footer-inside-right {
+  text-align: right;
+  padding: 0px 32px 0px;
+}
+
+.site-title-footer {
+  opacity: 0.54;
+}
+
+.site-about-footer {
+
+}
