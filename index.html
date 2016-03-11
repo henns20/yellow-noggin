@@ -2,6 +2,7 @@
 <html ng-app="yn">
   <head>
     <meta charset="utf-8">
+    <base href="./">
     <!--need a meta-tag to your for ui* ports  -->
     <title>Yellow Noggin</title>
 
@@ -10,6 +11,7 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
       <!-- inject:css -->
+
       <link rel="stylesheet" href="./app/assets/css/angular-material.min.css">
       <link rel="stylesheet" href="./app/assets/css/footer.css">
       <link rel="stylesheet" href="./app/assets/css/header.css">
@@ -20,10 +22,11 @@
       <link rel="stylesheet" href="./app/assets/css/layer2/blog-teaser.css">
       <link rel="stylesheet" href="./app/assets/css/layer2/layer2-bottom-main.css">
       <link rel="stylesheet" href="./app/assets/css/layer2/layer2.css">
+
       <!-- endinject -->
 
-
     </head>
+
   <body ng-controller="CoreController as vm">
 
     <header class="site-header" ng-style="vm.headerHeight" ng-cloak>
