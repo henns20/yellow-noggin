@@ -1,0 +1,169 @@
+.grid-bg {
+    background-image: url('../images/bg1-gray-grid.png');
+    background-color: #e8e8e8;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.transparent-bg {
+    background: transparent;
+}
+
+#container {
+    margin: 0 auto;
+    max-width: 860px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    height: 100%;
+}
+
+
+/**
+ * Social Media Row
+ */
+ .social-media-buttons {
+     min-width: 30px;
+ }
+.social-media  i.fa {
+    font-size: 20px;
+    color: #222222;
+}
+
+.card-top {
+    padding: 20px 20px;
+}
+.card-bottom {
+    height: 100px;
+    background-color: #ededed;
+    /*position: relative;*/
+    /*width: 600px;
+    padding-left: 130px;
+    padding-right: 130px;*/
+}
+
+.background-yn {
+    background-color: #FFCA28;
+    background: -webkit-linear-gradient(#FFCA28, #FFE082);
+    background: linear-gradient(#FFCA28, #FFE082);
+}
+.smaller-font {
+    font-size: 15px;
+}
+ul li {
+    /*fixes float issue*/
+     overflow-x: hidden;
+}
+.personal-info li span {
+    float: right;
+    Width200px padding-top: 4px;
+    font-weight: 300;
+}
+.personal-info li label {
+    float: left;
+    padding: 4px 7px;
+    font-weight: 600;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/**
+ * Cord Bottom
+ */
+
+.card-bottom {
+    height: 100px;
+    background-color: #ededed;
+    color: #bababa;
+}
+.card-bottom-icons {
+    font-size: 48px;
+    color: #bababa;
+    height: 48px;
+    speak: none;
+    display: block;
+    margin-bottom: 0px;
+}
+.icons-caption {
+    padding-left: 24px;
+}
+.card-bottom-view {
+    margin-top: 64px;
+}
+
+
+/**
+ * animations
+ */
+
+ [ui-view].ng-enter {
+     opacity: 0;
+     transition: opacity 2s;
+ }
+ [ui-view].ng-enter-active {
+     opacity: 1;
+ }
+ [ui-view].ng-leave {
+     opacity: 1;
+     transition: opacity .5s;
+ }
+ [ui-view].ng-leave-active {
+     opacity: 0;
+ }
+
+ /*.slideup {
+    position: relative;;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+.slideup.ng-enter,
+.slideup.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.slideup.ng-enter {
+    top: 100%;
+}
+.slideup.ng-enter-active {
+    top: 0;
+}
+.slideup.ng-leave {
+    top: 0;
+}
+.slideup.ng-leave-active {
+    top: -100%;
+}*/
+/*.our_content.ng-enter {
+     max-height: 0px;
+     opacity: 0;
+     transition: all 1s;
+     -moz-transition: opacity 2s;
+      -ms-transition: opacity 2s;
+      -o-transition: opacity 2s;
+     transition: max-height 1s;
+     -moz-transition: max-height 1s;
+      -ms-transition: max-height 1s;
+      -o-transition: max-height 1s;
+ }
+.our_content.ng-enter-active {
+     max-height: 400px;
+     opacity: 1;
+ }
+.our_content.ng-leave {
+     max-height: 400px;
+     opacity: 1;
+     -moz-transition: opacity 2s;
+      -ms-transition: opacity 2s;
+      -o-transition: opacity 2s;
+     transition: opacity 2s;
+     -moz-transition: max-height 1s;
+      -ms-transition: max-height 1s;
+      -o-transition: max-height 1s;
+     transition: max-height 1s;
+ }
+.our_content.ng-leave-active {
+     max-height: 0px;
+     opacity: 0;
+ }*/

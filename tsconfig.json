@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "listFiles": true
+    },
+    "filesGlob": [
+        "vcard-app/*.ts",
+        "typings/**",
+        "!node_modules/**",
+        "!build/**"
+    ],
+    "files": [],
+    "compileOnSave": true,
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

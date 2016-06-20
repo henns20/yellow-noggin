@@ -1,0 +1,49 @@
+<div layout="column" layout-fill>
+    <section id="container">
+        <div layout="column" layout-fill>
+            <md-toolbar style="background-color: transparent;" md-scroll-shrink md-shrink-speed-factor="0.5">
+                <div layout="row" class="social-media" layout-align="end bottom">
+                    <md-button class="social-media-buttons" href="#" ng-disabled="false" aria-label="description" md-no-ink="false" md-ripple-size="full"><i class="fa fa-google-plus" aria-hidden="true"></i></md-button>
+                    <md-button class="social-media-buttons" href="#/dkpagetemplates" ng-disabled="false" aria-label="description" md-no-ink="false" md-ripple-size="full"><i class="fa fa-linkedin" aria-hidden="true"></i></md-button>
+                    <md-button class="social-media-buttons" href="#/dkpagetemplates" ng-disabled="false" aria-label="description" md-no-ink="false" md-ripple-size="full"><i class="fa fa-twitter" aria-hidden="true"></i></md-button>
+
+                </div>
+            </md-toolbar>
+            <div ui-view="cardTop" class="our_content"></div>
+            <!-- <div ui-view="cardMiddle"></div> -->
+            <md-content class="md-whiteframe-glow-z1">
+
+
+                <div>
+                    <div layout="row" class="card-bottom" layout-align="center center">
+                        <md-button ui-sref="vcard.home">
+                            <md-icon class="card-bottom-icons" aria-div="Menu">person</md-icon>
+                            <div class="icons-caption">Home</div>
+                        </md-button>
+                        <md-button ui-sref="vcard.portfolio">
+                            <md-icon class="card-bottom-icons" aria-div="Menu">widgets</md-icon>
+                            <div class="icons-caption">Portfolio</div>
+                        </md-button>
+                        <md-button ui-sref="vcard.resume">
+                            <md-icon class="card-bottom-icons" aria-div="Menu">business_center</md-icon>
+                            <div class="icons-caption">Resume</div>
+                        </md-button>
+                        <md-button ui-sref="vcard.blog">
+                            <md-icon class="card-bottom-icons" aria-div="Menu">hdr_weak</md-icon>
+                            <div class="icons-caption">Blog</div>
+                        </md-button>
+                        <md-button ui-sref="vcard.contact">
+                            <md-icon class="card-bottom-icons" aria-div="Menu">mail_outline</md-icon>
+                            <div class="icons-caption">Contact</div>
+                        </md-button>
+
+                    </div>
+                </div>
+            </md-content>
+
+            <div ui-view="cardBottom" class="card-bottom-view our_content"></div>
+
+
+        </div>
+    </section>
+</div>

@@ -1,95 +1,48 @@
-	<!DOCTYPE html>
-<html ng-app="yn">
+<!DOCTYPE html>
+<html ng-app="vcard" class="grid-bg">
   <head>
     <meta charset="utf-8">
-    <base href="./">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- <base href="./"> -->
     <!--need a meta-tag to your for ui* ports  -->
     <title>Yellow Noggin</title>
 
       <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css"> -->
 			<!-- node font awesome did not work for now using cdn -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+            <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
+			<!-- build:css css/all.css -->
       <!-- inject:css -->
-
-      <link rel="stylesheet" href="./app/assets/css/angular-material.min.css">
-      <link rel="stylesheet" href="./app/assets/css/footer.css">
-      <link rel="stylesheet" href="./app/assets/css/header.css">
-      <link rel="stylesheet" href="./app/assets/css/main.css">
-      <link rel="stylesheet" href="./app/assets/css/topography.css">
-      <link rel="stylesheet" href="./app/assets/css/layer2/blog-cards.css">
-      <link rel="stylesheet" href="./app/assets/css/layer2/blog-detail.css">
-      <link rel="stylesheet" href="./app/assets/css/layer2/blog-teaser.css">
-      <link rel="stylesheet" href="./app/assets/css/layer2/layer2-bottom-main.css">
-      <link rel="stylesheet" href="./app/assets/css/layer2/layer2.css">
-
+      <link rel="stylesheet" href="/css/amp-styles.css">
+      <link rel="stylesheet" href="/css/angular-material.min.css">
+      <link rel="stylesheet" href="/css/z-tripwiremag-yn.css">
       <!-- endinject -->
+			<!-- endbuild -->
 
+                <style type="text/css">
+                    /**
+                     * Hide when Angular is not yet loaded and initialized
+                     */
+
+                    [ng\:cloak],
+                    [ng-cloak],
+                    [data-ng-cloak],
+                    [x-ng-cloak],
+                    .ng-cloak,
+                    .x-ng-cloak {
+                        display: none !important;
+                    }
+                </style>
     </head>
 
-  <body ng-controller="CoreController as vm">
+  <body class="transparent-bg">
 
-    <header class="site-header" ng-style="vm.headerHeight" ng-cloak>
-      <!-- graphics animation section -->
-      <!-- <md-toolbar class="md-primary">h
-        <p>
-          md pool bar test
-        </p>
-      </md-toolbar> -->
+<div ui-view="content"></div>
 
-      <md-toolbar class="wrapper-h js-navigation-row md-primary" ng-style="vm.backgroundColor">
-        <div class="fake-shadow js-fake-shadow"></div>
-      </md-toolbar>
-
-      <!-- <div class="_color js-header-background">
-
-        <div class="page-title-container">
-          looks to be used in an old version leaving this blank for now
-        </div>
-        <div class="fake-shadow js-fake-shadow"></div>
-      </div>r
-
-      <div class="wave-layer js-wave-layer">
-        wave effect leaving this blank for now
-      </div> -->
-
-      <div class="navigation-text-container">
-        <div class="site-width">
-          <div layout="row" layout-align="start center" class="navigation-text-row-container">
-            <div class="title-div" flex="20" class="navigation-text-left">
-            <!-- TODO: Needs to be cleaned/diciphered -->
-            <a href="#" class="title return" ng-show="!vm.isHomeState" ng-style="vm.headerTextColor">Yellow Noggin	</a>
-            </div>
-            <div class="navigation-text-middle-separator" flex="35"></div>
-            <div class="navigation-text-right" flex="40" > <!-- TODO navigation slightly left google design -->
-
-
-
-             <nav class="navigation js-nav-state">
-              <!-- <h2 class="off-screen"></h2> -->
-              <ul class="navigation-items" style="list-style-type: none;">
-                <li class="navigation-item"><a href="#/category/full-stack" ng-style="vm.headerTextColor">Full Stack</a></li>
-                <li class="navigation-item"><a href="#/category/marketeering" ng-style="vm.headerTextColor">Marketeering</a></li>
-                <li class="navigation-item"><a href="#" ng-style="vm.headerTextColor">About</a></li>
-              </ul>
-            </nav>
-
-           </div>
-          </div>
-        </div>
-      </div> <!-- navigation text -->
-
-    </header>
-<!-- content section includes custom page title relative to the page using fake header div -->
-
-  <div class="wrapper js-page-wrapper">
-    <div id="top" class="main js-page-container">
-      <div class="page">
-       <div ui-view="main_content" class=""></div>
-     </div>
-   </div>
-  </div>
-  <footer>
+  <!-- <footer>
 	  <div class="site-width">
 				<div class="footer-inside" layout="row" layout-align="center center">
 					<div flex="25">
@@ -106,7 +59,8 @@
 					</div>
 				</div>
 	  </div>
-  </footer>
+  </footer> -->
+
 
     <!-- app js libraries -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -116,26 +70,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.8/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.5/angular-material.js"></script>
-
     <!-- end of js libraries -->
 
 
+		<!-- build:js js/app.js -->
     <!-- inject:js -->
-    <script src="./app/app.module.js"></script>
-    <script src="./app/blog/blog.module.js"></script>
-    <script src="./app/core/core.module.js"></script>
-    <script src="./app/blog/blog.controller-with-sp-promise.js"></script>
-    <script src="./app/blog/blog.controller.js"></script>
-    <script src="./app/blog/blog.route-nested-state.js"></script>
-    <script src="./app/blog/blog.route.js"></script>
-    <script src="./app/blog/blog.service.js"></script>
-    <script src="./app/core/core.controller-scopewatch.js"></script>
-    <script src="./app/core/core.controller.js"></script>
-    <script src="./app/core/core.mdTheming.js"></script>
-    <script src="./app/core/core.route.js"></script>
-    <script src="./app/core/core.service.js"></script>
+    <script src="/vcard-app/vcard-app.module.js"></script>
+    <script src="/vcard-app/vcard-app.routes.js"></script>
     <!-- endinject -->
 
+		<!-- inject:templates:js -->
+
+		<!-- endinject -->
+		<!-- endbuild -->
 
   </body>
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="yn">
+  <head>
+    <meta charset="utf-8">
+    <base href="./">
+    <!--need a meta-tag to your for ui* ports  -->
+    <title>Yellow Noggin</title>
+
+      <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css"> -->
+			<!-- node font awesome did not work for now using cdn -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+			<link rel="stylesheet" href="css/all.css">
+
+    </head>
+
+  <body ng-controller="CoreController as vm">
+
+    <header class="site-header" ng-style="vm.headerHeight" ng-cloak>
+      <!-- graphics animation section -->
+      <!-- <md-toolbar class="md-primary">h
+        <p>
+          md pool bar test
+        </p>
+      </md-toolbar> -->
+
+      <md-toolbar class="wrapper-h js-navigation-row md-primary" ng-style="vm.backgroundColor">
+        <div class="fake-shadow js-fake-shadow"></div>
+      </md-toolbar>
+
+      <!-- <div class="_color js-header-background">
+
+        <div class="page-title-container">
+          looks to be used in an old version leaving this blank for now
+        </div>
+        <div class="fake-shadow js-fake-shadow"></div>
+      </div>r
+
+      <div class="wave-layer js-wave-layer">
+        wave effect leaving this blank for now
+      </div> -->
+
+      <div class="navigation-text-container">
+        <div class="site-width">
+          <div layout="row" layout-align="start center" class="navigation-text-row-container">
+            <div class="title-div" flex="20" class="navigation-text-left">
+            <!-- TODO: Needs to be cleaned/diciphered -->
+            <a href="#" class="title return" ng-show="!vm.isHomeState" ng-style="vm.headerTextColor">Yellow Noggin	</a>
+            </div>
+            <div class="navigation-text-middle-separator" flex="35"></div>
+            <div class="navigation-text-right" flex="40" > <!-- TODO navigation slightly left google design -->
+
+
+
+             <nav class="navigation js-nav-state">
+              <!-- <h2 class="off-screen"></h2> -->
+              <ul class="navigation-items" style="list-style-type: none;">
+                <li class="navigation-item"><a href="#/category/full-stack" ng-style="vm.headerTextColor">Full Stack</a></li>
+                <li class="navigation-item"><a href="#/category/marketeering" ng-style="vm.headerTextColor">Marketeering</a></li>
+                <li class="navigation-item"><a href="#" ng-style="vm.headerTextColor">About</a></li>
+              </ul>
+            </nav>
+
+           </div>
+          </div>
+        </div>
+      </div> <!-- navigation text -->
+
+    </header>
+<!-- content section includes custom page title relative to the page using fake header div -->
+
+  <div class="wrapper js-page-wrapper">
+    <div id="top" class="main js-page-container">
+      <div class="page">
+       <div ui-view="main_content" class=""></div>
+     </div>
+   </div>
+  </div>
+  <footer>
+	  <div class="site-width">
+				<div class="footer-inside" layout="row" layout-align="center center">
+					<div flex="25">
+						<div class="footer-inside-left">
+							<h2 class="site-title-footer">Yellow Noggin</h2>
+						</div>
+					</div>
+					<div flex="50"></div>
+					<div flex="25">
+						<div class="footer-inside-right">
+							<p class="site-about-footer">About YN</p>
+						</div>
+
+					</div>
+				</div>
+	  </div>
+  </footer>
+
+
+    <!-- app js libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.4.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.5/angular-material.js"></script>
+    <!-- end of js libraries -->
+
+
+		<script src="js/app.js"></script>
+
+  </body>
+</html>
