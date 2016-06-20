@@ -14,7 +14,23 @@
         "!node_modules/**",
         "!build/**"
     ],
-    "files": [],
+    "files": [
+        "vcard-app/vcard-app.module.ts",
+        "vcard-app/vcard-app.routes.ts",
+        "typings/angular-material/angular-material.d.ts",
+        "typings/angular-ui-router/angular-ui-router.d.ts",
+        "typings/angularjs/angular-animate.d.ts",
+        "typings/angularjs/angular-component-router.d.ts",
+        "typings/angularjs/angular-cookies.d.ts",
+        "typings/angularjs/angular-mocks.d.ts",
+        "typings/angularjs/angular-resource.d.ts",
+        "typings/angularjs/angular-route.d.ts",
+        "typings/angularjs/angular-sanitize.d.ts",
+        "typings/angularjs/angular.d.ts",
+        "typings/angularjs/legacy/angular-scenario-1.2.d.ts",
+        "typings/jquery/jquery.d.ts",
+        "typings/tsd.d.ts"
+    ],
     "compileOnSave": true,
     "atom": {
         "rewriteTsconfig": true
