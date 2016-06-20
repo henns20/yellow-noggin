@@ -21,7 +21,7 @@ var vcard;
             .state('vcard', {
             views: {
                 "content": {
-                    templateUrl: '/vcard-app/partials/vcard.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard.tmpl.html'
                 }
             }
         })
@@ -29,10 +29,10 @@ var vcard;
             url: '/',
             views: {
                 "cardTop": {
-                    templateUrl: '/vcard-app/partials/vcard-home-top.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-home-top.tmpl.html'
                 },
                 "cardMiddle": {
-                    templateUrl: '/vcard-app/partials/vcard-middle.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-middle.tmpl.html'
                 }
             }
         })
@@ -40,10 +40,10 @@ var vcard;
             url: '/portfolio',
             views: {
                 "cardBottom": {
-                    templateUrl: '/vcard-app/partials/vcard-bottom-portfolio.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-bottom-portfolio.tmpl.html'
                 },
                 "cardMiddle": {
-                    templateUrl: '/vcard-app/partials/vcard-middle.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-middle.tmpl.html'
                 }
             }
         })
@@ -51,10 +51,10 @@ var vcard;
             url: '/resume',
             views: {
                 "cardBottom": {
-                    templateUrl: '/vcard-app/partials/vcard-bottom-resume.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-bottom-resume.tmpl.html'
                 },
                 "cardMiddle": {
-                    templateUrl: '/vcard-app/partials/vcard-middle.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-middle.tmpl.html'
                 }
             }
         })
@@ -62,10 +62,10 @@ var vcard;
             url: '/blog',
             views: {
                 "cardBottom": {
-                    templateUrl: '/vcard-app/partials/vcard-bottom-blog.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-bottom-blog.tmpl.html'
                 },
                 "cardMiddle": {
-                    templateUrl: '/vcard-app/partials/vcard-middle.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-middle.tmpl.html'
                 }
             }
         })
@@ -73,10 +73,10 @@ var vcard;
             url: '/contact',
             views: {
                 "cardBottom": {
-                    templateUrl: '/vcard-app/partials/vcard-bottom-contact.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-bottom-contact.tmpl.html'
                 },
                 "cardMiddle": {
-                    templateUrl: '/vcard-app/partials/vcard-middle.tmpl.html'
+                    templateUrl: 'vcard-app/partials/vcard-middle.tmpl.html'
                 }
             }
         });
